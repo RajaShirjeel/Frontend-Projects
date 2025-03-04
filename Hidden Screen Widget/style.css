@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input {
+    height: 3.5rem;
+    width: 4rem;
+    transition: all 0.5s ease-in;
+}
+
+.search-icon {
+    position: absolute;
+    right: .5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.4rem;
+    cursor: pointer;
+}
+
+.input.active{
+    width: 40rem;
+}

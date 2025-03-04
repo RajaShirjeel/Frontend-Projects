@@ -1,0 +1,91 @@
+:root{
+    --line--border--fill: #3498db;
+    --link--border--empty: #e0e0e0;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.progress__bars-container{
+    display: flex;
+}
+
+
+div.active{
+    background-color: blue;
+}
+
+.progress__bar--container{
+    display: flex;
+    align-items: center;
+}
+
+.progress__bar--container:not(:first-child)::before{
+    display: block;
+    content: "";
+    background-color: #9999;
+    height: .5rem;
+    width: 4rem;
+    transition: all 0.4s;
+    
+}
+
+.progress__bar--outer{
+    background-color: #9999;
+    border-radius: 50%;
+    padding: .4rem;
+    transition: all 0.4s;
+    
+}
+
+.progress__bar--inner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    padding: 1.7rem;
+    border-radius: 50%;
+    font-size: 1.7rem;
+}
+
+.progress__bar--container.filled::before{
+    background-color: blue;
+}
+
+.btns--container{
+    display: flex;
+    gap: 3rem;
+    margin-top: 6rem;
+}
+
+.btn{
+    background-color: var(--line--border--fill);
+    padding: 1rem 3rem;
+    border-radius: 5px;
+    color: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.disabled{
+    background-color: var(--link--border--empty);
+    color: white;
+    cursor: not-allowed;
+}
