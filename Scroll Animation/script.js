@@ -1,10 +1,10 @@
 const containers = document.querySelectorAll('.item');
 const BringInView = function(entries){
-    const [entry] = entries;
-    console.log(entry)
-    // if (!entry.isIntersecting) return;
-    entry.target.style.transform = `translateX(${0}%)`
-    
+    entries.forEach(en => {
+        if (en.isIntersecting){
+            en.target.classList.add('show')
+        }
+    })
 }
 
 const observer = new IntersectionObserver(BringInView, {
@@ -15,14 +15,6 @@ const observer = new IntersectionObserver(BringInView, {
 
 containers.forEach((item, ind) => {
     observer.observe(item)
-    console.log(item, ind)
-    if (ind % 2 == 0){
-        item.style.transform = `translateX(${-100}%)`
-    }
-    else{
-        item.style.transform = `translateX(${100}%)`
-
-    }
 })
 
 

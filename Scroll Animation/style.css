@@ -8,6 +8,10 @@ html {
     font-size: 62.5%;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .container{
     display: flex;
     align-items: center;
@@ -22,6 +26,18 @@ html {
 .item {
     background-color: #87CEEB;
     padding: 10rem;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.item:nth-child(even){
+    transform: translateX(-100%);
+}
+
+.item.show {
+    opacity: 1;
+    transform: translateX(0%);
 }
 
 .text {
